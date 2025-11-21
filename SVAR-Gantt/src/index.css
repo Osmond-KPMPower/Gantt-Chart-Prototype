@@ -1,0 +1,184 @@
+/* index.css – neutral base for the whole app */
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #111827;
+  background-color: #f4f6fb;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Basic link styling */
+a {
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+}
+a:hover {
+  color: #1d4ed8;
+}
+
+/* Let the app layout control centering; just reset body */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f4f6fb;
+}
+
+/* Layout shell */
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.app-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.tab-layout {
+  display: flex;
+  flex-direction: column;   /* ⬅ stack vertically */
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+/* both panels are now full-width blocks */
+.chart-panel {
+  flex: none;
+  min-width: 0;
+}
+
+.sidebar-panel {
+  flex: none;
+  min-width: 0;
+}
+
+/* make backlog panel look like a section under the chart */
+.sidebar-card {
+  margin-top: 0.25rem;
+}
+
+/* Cards for chart / sidebar */
+
+.chart-card,
+.sidebar-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+}
+
+.chart-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sidebar-subtitle {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* === Backlog / card styles === */
+
+.event-list {
+  list-style: none;              /* remove bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;                   /* vertical space between cards */
+}
+
+/* Card-style event (Mobiscroll-inspired) */
+.event-card {
+  width: 100%;                   /* stay inside sidebar */
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: grab;
+  user-select: none;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease,
+    filter 0.08s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.3);
+  filter: brightness(1.05);
+}
+
+.event-card:active {
+  cursor: grabbing;
+  transform: translateY(0);
+}
+
+/* main title line ("Task 1") */
+.event-card-title {
+  font-weight: 600;
+}
+
+/* secondary line ("1.5 hours") */
+.event-card-sub {
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+/* SortableJS visual feedback */
+.event-ghost {
+  opacity: 0.4;
+}
+
+.event-chosen {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Make the timeline header readable */
+.react-calendar-timeline .rct-header,
+.react-calendar-timeline .rct-calendar-header {
+  background-color: #e5e7eb; /* light gray */
+  border-color: #d1d5db;
+}
+
+/* Primary (top) date labels */
+.react-calendar-timeline .rct-dateHeader-primary {
+  color: #111827; /* near-black */
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Secondary (bottom) labels like hours */
+.react-calendar-timeline .rct-dateHeader-secondary {
+  color: #4b5563; /* dark gray */
+  font-size: 0.75rem;
+}
