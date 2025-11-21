@@ -1,5 +1,5 @@
 // src/components/DraggableList.tsx
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Sortable, { type SortableEvent } from "sortablejs";
 
 export interface BacklogEvent {
