@@ -1,0 +1,1 @@
+Proof of concept that draggable lists can be applied to different Gantt Chart/Timeline libraries. Here, I used SortableJS as the draggable list library, and integrated it with both SVAR-Gantt and React-Calendar-Timeline.
